@@ -99,6 +99,7 @@ Type number : TempJuliusIST   "Temp Julius IST" [ ga="9.001:<1/4/2" ]
 {
 
 Type number : TempArbeitszimmerIST   "Temp Arbeitszimmer IST" [ ga="9.001:<0/6/4" ]
+Type number : TempArbeitszimmerSOLL   "Temp Arbeitszimmer SOLL" [ ga="9.001:1/3/10+<1/3/10" ]
 Type number : TempWCIST   "Temp WC IST" [ ga="9.001:<1/3/4  " ]
 Type number : TempKuecheEssenIST   "Temp Kueche und Esszimmer IST" [ ga="9.001:<1/1/5" ]
 Type number : TempWohnzimmerIST   "Temp Wohnzimmer IST" [ ga="9.001:<1/3/9" ]
