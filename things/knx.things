@@ -1,0 +1,109 @@
+Bridge knx:ip:bridge [  
+    type="TUNNEL", 
+    ipAddress="192.168.178.30", 
+    portNumber=3671, 
+    localIp="192.168.178.29",
+    readingPause=50, 
+    responseTimeout=10, 
+    readRetriesLimit=3, 
+    autoReconnectPeriod=60,
+    localSourceAddr="1.1.8"
+]{
+
+Thing device SchaltaktorAKS24 [
+    address="1.1.15",
+    fetch=true,
+    pingInterval=300,
+    readInterval=0
+] 
+{
+
+Type switch : Lampe_HWR             "HWR"        [ ga="1.001:0/2/0+<0/2/1" ]
+Type switch : Decke_Gaestebad             "Gaestebad"        [ ga="1.001:1/3/0+<1/3/1" ]
+Type switch : Spiegel_Gaestebad             "Spiegel Gaestebad"        [ ga="1.001:1/3/2+<1/3/0" ]
+Type switch : Decke_Kueche             "Deckenlicht Kueche"        [ ga="1.001:2/0/1+<2/2/1" ]
+Type switch : Spots_Kuechenschrank             "Kuechenschrank"        [ ga="1.001:2/2/2+<2/2/1" ]
+Type switch : Laternen_Eingang             "Eingang"        [ ga="1.001:2/0/9+<2/0/10" ]
+Type switch : Dachkasten_vorne             "Dachkasten vorne"        [ ga="1.001:1/6/0+<1/6/1" ]
+Type switch : Dachkasten_garten             "Dachkasten Garten"        [ ga="1.001:1/6/2+<1/6/3" ]
+Type switch : Decke_Arbeitszimmer             "Deckenlicht Arbeitszimmer"        [ ga="1.001:0/6/0+<0/6/1" ]
+Type switch : Decke_Schlafzimmer             "Schlafzimmer"        [ ga="1.001:2/3/0+<2/3/1" ]
+Type switch : Nachttische_Schlafzimmer             "Nachttische"        [ ga="1.001:2/3/11+<2/3/12" ]
+Type switch : Nachttisch_Doreen             "Nachttisch Doreen"        [ ga="1.001:2/3/2+<2/3/3" ]
+Type switch : Nachttisch_Mathias             "Nachttisch Mathias"        [ ga="1.001:2/3/4+<2/3/5" ]
+Type switch : Decke_Ankleide             "Deckenlicht Ankleide"        [ ga="1.001:0/5/0+<0/5/1" ]
+Type switch : Spiegel_Ankleide             "Spiegel Ankleide"        [ ga="1.001:0/5/2+<0/5/3" ]
+Type switch : Decke_Bad             "Deckenlicht Bad"        [ ga="1.001:1/7/0+<1/7/1" ]
+Type switch : Dusche_Bad             "Dusche Bad"        [ ga="1.001:1/7/2+<1/7/3" ]
+Type switch : Spiegel_Badezimmer             "Spiegel Badezimmer"        [ ga="1.001:1/7/4+<1/7/5" ]
+Type switch : Romantik       "Romantik"        [ ga="1.001:2/2/0+<2/2/1" ]
+Type switch : Steckdosen_Terrasse       "Steckdosen Terrasse"        [ ga="1.001:1/6/6+<1/6/7" ]
+Type switch : Steckdose_Eingang       "Steckdose Eingang"        [ ga="1.001:2/0/11+<2/0/12" ]
+Type switch : Status_Nacht       "Status Tag/Nacht"        [ ga="1.001:0/0/4+<0/0/4" ]
+
+
+ 
+  
+ }
+Thing device Dimmaktor2 [
+    address="1.1.14",
+    fetch=true,
+    pingInterval=300,
+    readInterval=0
+] 
+{
+
+Type dimmer : Deckenspots_Flur      "Flur"        [ switch="0/3/0+<0/3/1", position="2/2/18+<2/0/8" ]
+Type dimmer : Deckenspots_Arbeitszimmer      "Schreibtisch"        [ switch="0/6/2+<0/6/3", position="0/6/11+<0/6/10" ]
+Type dimmer : Deckenlampe_Lilly      "Licht Lilly"        [ switch="1/5/7+<1/5/8", position="1/5/11+<1/5/10" ]
+Type dimmer : Deckenspots_Terrasse      "Terrasse"        [ switch="1/0/0+<1/0/1", position="1/0/4+<1/0/3" ]
+
+ }
+ Thing device Dimmaktor1 [
+    address="1.1.13",
+    fetch=true,
+    pingInterval=300,
+    readInterval=0
+] 
+{
+
+Type dimmer: Deckenlampe_Herd      "Herd"        [ switch="2/2/4+<2/2/5", position="2/2/8+<2/2/7" ]
+Type dimmer : Deckenlampe_Esszimmer      "Esszimmer"        [ switch="2/1/0+<2/1/1", position="2/1/4+<2/1/3" ]
+Type dimmer : Spots_Wohnzimmer      "Wohnzimmer"        [ switch="1/1/0+<1/1/1", position="1/1/10+<1/1/3" ]
+Type dimmer : Deckenlampe_Julius      "Julius"        [ switch="1/4/7+<1/4/8", position="1/4/11+<1/4/10" ]
+
+ }
+ Thing device Heizungaktor1HWR [
+    address="1.1.19",
+    fetch=true,
+    pingInterval=300,
+    readInterval=0
+] 
+{
+
+Type number : TempHWRIST   "Temp HWR IST" [ ga="9.001:<0/4/8" ]
+Type number : TempFlurIST   "Temp Flur IST" [ ga="9.001:<2/0/2" ]
+Type number : TempSchlafzimmerIST   "Temp Schlafzimmer IST" [ ga="9.001:<2/3/6" ]
+Type number : TempAnkleideIST   "Temp Ankleide IST" [ ga="9.001:<0/5/4" ]
+Type number : TempBadIST   "Temp Bad IST" [ ga="9.001:<1/7/6" ]
+Type number : TempLillyIST   "Temp Lilly IST" [ ga="9.001:<1/5/2" ]
+Type number : TempJuliusIST   "Temp Julius IST" [ ga="9.001:<1/4/2" ]
+
+ }
+ Thing device Heizungaktor2WZ [
+    address="1.1.19",
+    fetch=true,
+    pingInterval=300,
+    readInterval=0
+] 
+{
+
+Type number : TempArbeitszimmerIST   "Temp Arbeitszimmer IST" [ ga="9.001:<0/6/4" ]
+Type number : TempWCIST   "Temp WC IST" [ ga="9.001:<1/3/4  " ]
+Type number : TempWohnenIST   "Temp Wohnen IST" [ ga="9.001:<1/1/5" ]
+}
+  }
+Bridge openweathermap:weather-api:api "OpenWeatherMap Account" [apikey="4644ecb480157ac36d57212743940804", refreshInterval=60, language="de"] {
+    Thing onecall local "Local Weather and Forecast" [location="52.3804152,13.6203417"]
+    Thing onecall-history local-history "Local History" [location="52.3804152,13.6203417", historyDay=1]
+}

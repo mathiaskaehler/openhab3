@@ -1,0 +1,1 @@
+Thing skyq:skyqreceiver:skyq1 [ hostname="192.168.178.23", configurablePresets=true, retryInterval=60, checkStatusInterval=60, refreshInterval=30 ]
